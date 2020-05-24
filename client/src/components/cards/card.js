@@ -20,7 +20,9 @@ const Card = ({arr, index, setIndex}) => {
                     {index === arr.length - 1 ? 
                         <h1><span>Finish</span></h1>
                         :
-                        <h1><span>Step : {index + 1}</span></h1>
+                        index === 0 ? <h1><span>Start</span></h1>
+                        :
+                        <h1><span>Step : {index}</span></h1>
                     }
                 </div>
                 <div className="blog-summary">

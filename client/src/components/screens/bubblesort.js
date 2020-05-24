@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import './bubblesort.scss';
+import Card from '../cards/card';
 import Tab from '../tabs/tab';
 import InputArray from '../forms/inputArray';
-import Card from '../cards/card';
 
-const MergeSort = () => {
+
+const BubbleSort = () => {
     const [isSorted, setIsSorted] = useState(false);
     const [arr, setArray] = useState([]);
     const [index, setIndex] = useState(-1);
@@ -11,16 +13,16 @@ const MergeSort = () => {
     const data = [
         {
             name: 'Penggunaan',
-            text: 'Untuk penggunaan aplikasi ini, silahkan input array yang akan di sort menggunakan algoritma Merge Sort ini dengan setiap elemen pada array dipisahkan dengan tanda koma seperti pada contoh sebagai berikut : \n 1,2,3,4,5'
+            text: 'Untuk penggunaan aplikasi ini, silahkan input array yang akan di sort menggunakan algoritma Bubble Sort ini dengan setiap elemen pada array dipisahkan dengan tanda koma seperti pada contoh sebagai berikut : \n 1,2,3,4,5'
         },
         {
             name: 'Algoritma',
-            text: 'Merge Sort adalah algoritma pengurutan yang akan melakukan partisi terhadap array yang akan dilakukan pengurutan dan melakukan pengurutan mulai dari partisi - partisi terkecil. Pada visualisasi ini akan mulai melakukan pengurutan dengan penggabungan dari partisi - partisi terkecil.'
+            text: 'Bubble Sort adalah algoritma pengurutan yang cukup sederhana karena algoritma ini akan melakukan penukaran dua buah elemen pada array yang saling bersebelahan apabila elemen tersebut berada pada urutan yang tidak sesuai.'
         },
     ];
 
     const handleSort = async (array) => {
-        const response = await fetch('/api/mergesort', {
+        const response = await fetch('/api/bubblesort', {
             method : 'POST',
             headers : {
                 'Content-Type' : 'application/json',
@@ -41,21 +43,25 @@ const MergeSort = () => {
         var parsedArr = arr.map(num => parseInt(num, 10));
         handleSort(parsedArr);
     }
-
+    
     return ( 
         <div>
-            <h1>Merge Sort</h1>
+            <h1>Bubble Sort</h1>
             <Tab data={data}>
-                <p>Kompleksitas algoritma merge sort adalah O(n log n)</p>
+                <p>Kompleksitas algoritma Bubble Sort adalah O(n<sup>2</sup>)</p>
             </Tab>
             <InputArray onSubmit={handleSubmit}/>
             {isSorted ? 
-                <Card arr={arr} index={index} setIndex={setIndex}/>
+                <Card arr={arr} index={index} setIndex={setIndex}
+                />
                 :
                 ""
             }
+            
+            
         </div>
     );
 }
 
-export default MergeSort;
+
+export default BubbleSort;

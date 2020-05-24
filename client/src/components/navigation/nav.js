@@ -10,7 +10,6 @@ const Nav = () => {
             <Link id="home" className="menu-item" to="/">Home</Link>
             <Link id="about" className="menu-item" to="/bubblesort">Bubble Sort</Link>
             <Link id="about" className="menu-item" to="/mergesort">Merge Sort</Link>
-            <Link id="about" className="menu-item" to="/about">About</Link>
         </Menu>
     );
 }

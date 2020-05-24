@@ -2,6 +2,12 @@ const bubbleSort = (list) => {
 
     var step = []
 
+    step.push({
+        list : [...list],
+        i : -1,
+        j : -1,
+    })
+
     for(var i = 0;i< list.length - 1;i++){
         for(var j = 0;j < list.length - i - 1; j++){
             step.push({
@@ -37,6 +43,12 @@ const swap = (arr, first_Index, second_Index) => {
 function mergeSort(arr){
     var n = arr.length;
     var step = [];
+
+    step.push({
+        list : [...arr],
+        i : -1,
+        j : -1,
+    })
 
     for(var curr_size = 1;curr_size <= n-1; curr_size *= 2){
 
