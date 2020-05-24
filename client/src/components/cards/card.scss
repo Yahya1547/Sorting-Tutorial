@@ -1,0 +1,138 @@
+
+.blog-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: hsla(0, 0, 0, .2) 0 4px 2px -2px;
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 100;
+  margin: 48px auto;
+  width: 20rem;
+  @media screen and (min-width: 480px) {
+    width: 28rem;
+  }
+  @media screen and (min-width: 767px) {
+    width: 40rem;
+  }
+  @media screen and (min-width: 959px) {
+    width: 50rem;
+  }
+}
+.blog-container a {
+  color: #4d4dff;
+  text-decoration: none;
+  transition: .25s ease;
+  &:hover {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+  }
+}
+
+
+// Blog body
+//-------------------------
+.blog-body {
+  margin: 0 auto;
+  margin-top : 10px;
+  padding : 10px;
+  width: 80%;
+}
+
+#changed p {
+  border-radius: 10px;
+  background-color: #7f8ff4;
+  margin-right : 5px;
+  margin-bottom : 10px;
+  color : white
+}
+
+#normal p {
+  border-radius: 10px;
+  border-width : 5px;
+  background-color: #2471A3;
+  margin-right : 5px;
+  margin-bottom : 10px;
+  color: #F7F9F9;
+}
+.video-body {
+  height: 100%;
+  width: 100%;
+}
+.blog-title h1 span {
+  color: #333;
+  font-weight: 100;
+}
+
+.blog-summary {
+  display : grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.blog-summary p {
+  color: lighten(#333, 10%);
+  padding : 16px;
+}
+.blog-tags ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+}
+.blog-tags li + li {
+  margin-left: .5rem;
+}
+.blog-tags a {
+  border: 1px solid lighten(#333, 40%);
+  border-radius: 3px;
+  color: lighten(#333, 40%);
+  font-size: .75rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  padding: 0 .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 5rem;
+}
+
+// Blog footer
+//-------------------------
+.blog-footer {
+  border-top: 1px solid lighten(#333, 70%);
+  margin: 0 auto;
+  padding-bottom: .125rem;
+  width: 80%;
+}
+.blog-footer ul {
+  list-style: none;
+  display: flex;
+  flex: row wrap;
+  justify-content: flex-end;
+  padding-left: 0;
+}
+.blog-footer li:first-child {
+  margin-right: auto;
+}
+.blog-footer li + li {
+  margin-left: .5rem;
+}
+.blog-footer li {
+  color: lighten(#333, 40%);
+  font-size: .75rem;
+  height: 1.5rem;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  white-space: nowrap;
+  & a {
+    color: lighten(#333, 40%);
+  }
+}
+
+#control{
+  display : grid;
+  grid-template-columns: repeat(4, 1fr);
+}
