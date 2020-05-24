@@ -4,19 +4,21 @@
   "description": "Sorting Tutorial untuk tugas seleksi asisten Lab IRK",
   "main": "app.js",
   "scripts": {
-    "client": "cd client && cd sorting-tutorial &&yarn start",
+    "client": "cd client && yarn start",
     "server": "nodemon app.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "prestart": "npm run build --prefix client",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node app.js"
   },
   "author": "Yahya-13518029",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "formik": "^2.1.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.19.1"
   },
   "repository": {
     "type": "git",

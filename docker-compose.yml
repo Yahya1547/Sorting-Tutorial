@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+
+  node-react-starter-app:
+    image: yahya1547/sorting-tutorial-yahya:dev
+    build: 
+      context: .
+      target: dev
+    container_name: sorting-tutorial-yahya
+    restart: always
+    volumes: 
+      - .:/app
+    ports:
+      - "5000:5000"
+      - "3000:3000"
+    networks: 
+      - node-react-starter-network
+
+networks: 
+  node-react-starter-network:
+    name: node-react-starter-network

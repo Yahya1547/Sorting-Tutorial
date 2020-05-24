@@ -21,4 +21,11 @@ Nilai maksimum adalah 1500. Berbagai aspek yang akan dinilai ialah
 3. Clean Code (termasuk struktur repository)
 
 ## Bonus (500 poin)
-Gunakan **Docker** dan **Deploy** website yang sudah selesai dibuat.
+Gunakan **Docker** dan **Deploy** website yang sudah selesai dibuat
+
+## script
+docker-compose -f docker-compose-test-prod.yml up --build
+docker tag yahya1547/yahya-sorting-tutorial:prod registry.heroku.com/sorting-tutorial-yahya/web
+docker push registry.heroku.com/sorting-tutorial-yahya/web
+heroku container:release web -a sorting-tutorial-yahya   
+heroku open -a sorting-tutorial-yahya   
