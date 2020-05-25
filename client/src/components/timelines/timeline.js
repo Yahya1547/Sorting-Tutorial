@@ -1,4 +1,7 @@
 import { TimelineMax as Timeline, Power1 } from 'gsap';
+import CSSPlugin from 'gsap/CSSPlugin';
+
+const C = CSSPlugin;
 
 const getDefaultTimeline = (node, delay) => {
   const timeline = new Timeline({ paused: true });
