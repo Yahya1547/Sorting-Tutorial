@@ -45,11 +45,3 @@ https://sorting-tutorial-yahya.herokuapp.com/
 ## Penyelesaian Bonus
 Bonus berhasil diselesaikan dengan menggunakan docker dan deploy aplikasi ke heroku.
 Dockerfile dan file docker-compose yang digunakan dapat dilihat pada root direktori.
-
-
-## script
-docker-compose -f docker-compose-test-prod.yml up --build
-docker tag yahya1547/yahya-sorting-tutorial:prod registry.heroku.com/sorting-tutorial-yahya/web
-docker push registry.heroku.com/sorting-tutorial-yahya/web
-heroku container:release web -a sorting-tutorial-yahya   
-heroku open -a sorting-tutorial-yahya
