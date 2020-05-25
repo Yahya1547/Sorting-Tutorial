@@ -36,13 +36,13 @@ const Card = ({arr, index, setIndex}) => {
                     
                     }
                     <div></div>
-                    <div></div>
                     {index === arr.length - 1 ?
                         <div></div>
                         :
                         <FlatButton value="next" onClick={() => setIndex(index + 1)}/>
                     }
-                    
+                    <div></div>
+                    <FlatButton value="reset" onClick={() => setIndex(0)}/>
                 </div>
             </div>
 

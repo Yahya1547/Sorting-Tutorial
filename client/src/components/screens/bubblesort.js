@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import './bubblesort.scss';
+import './sort.scss';
 import Card from '../cards/card';
 import Tab from '../tabs/tab';
 import InputArray from '../forms/inputArray';
+import { CSSTransition } from 'react-transition-group';
 
 
 const BubbleSort = () => {
@@ -12,12 +13,12 @@ const BubbleSort = () => {
 
     const data = [
         {
-            name: 'Penggunaan',
-            text: 'Untuk penggunaan aplikasi ini, silahkan input array yang akan di sort menggunakan algoritma Bubble Sort ini dengan setiap elemen pada array dipisahkan dengan tanda koma seperti pada contoh sebagai berikut : \n 1,2,3,4,5'
-        },
-        {
             name: 'Algoritma',
             text: 'Bubble Sort adalah algoritma pengurutan yang cukup sederhana karena algoritma ini akan melakukan penukaran dua buah elemen pada array yang saling bersebelahan apabila elemen tersebut berada pada urutan yang tidak sesuai.'
+        },
+        {
+            name: 'Penggunaan',
+            text: 'Untuk penggunaan aplikasi ini, silahkan input array yang akan di sort menggunakan algoritma Bubble Sort ini dengan setiap elemen pada array dipisahkan dengan tanda koma seperti pada contoh sebagai berikut : \n 1,2,3,4,5'
         },
     ];
 
@@ -45,20 +46,24 @@ const BubbleSort = () => {
     }
     
     return ( 
-        <div>
+        <div className="view">
             <h1>Bubble Sort</h1>
-            <Tab data={data}>
-                <p>Kompleksitas algoritma Bubble Sort adalah O(n<sup>2</sup>)</p>
-            </Tab>
-            <InputArray onSubmit={handleSubmit}/>
-            {isSorted ? 
-                <Card arr={arr} index={index} setIndex={setIndex}
-                />
-                :
-                ""
-            }
-            
-            
+            <div className="content">
+                <div className="content--inner">
+                    <Tab data={data}>
+                        <p>Kompleksitas algoritma Bubble Sort adalah O(n<sup>2</sup>)</p>
+                    </Tab>
+                    <InputArray onSubmit={handleSubmit}/>
+                    <CSSTransition
+                    in={isSorted}
+                    timeout={300}
+                    classNames="fade"
+                    unmountOnExit
+                    >
+                        <Card arr={arr} index={index} setIndex={setIndex}/>
+                    </CSSTransition>
+                </div>
+            </div>
         </div>
     );
 }
