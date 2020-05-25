@@ -49,7 +49,7 @@ const MergeSort = () => {
             <div className="content">
                 <div className="content--inner">
                     <Tab data={data}>
-                        <p>Kompleksitas algoritma merge sort adalah O(n log n)</p>
+                        <p>Kompleksitas algoritma Merge Sort adalah O(n log n)</p>
                     </Tab>
                     <InputArray onSubmit={handleSubmit}/>
                     <CSSTransition

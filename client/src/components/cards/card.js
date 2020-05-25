@@ -14,7 +14,6 @@ const Card = ({arr, index, setIndex}) => {
     }
     return ( 
         <div className="blog-container">
-
             <div className="blog-body">
                 <div className="blog-title">
                     {index === arr.length - 1 ? 
