@@ -1,0 +1,11 @@
+{
+    "data" : [
+        <<Start : Select(Presence[Name], True)>>
+        "Name" : "<<[Name]>>",
+        "Date" : "<<[Date]>>",
+        "Training Name" : "<<[Training Name]>>",
+        "Room" : "<<[Room]>>",
+        "Insentif" : <<[Insentif]>>
+        <<End>>
+    ]
+}

@@ -22,6 +22,10 @@ app.post('/api/mergesort', (req, res) => {
     res.send(sortedArr);
 });
 
+app.get('/api/hello', (req, res) => {
+    res.send('hello world');
+})
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 

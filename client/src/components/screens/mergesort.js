@@ -43,7 +43,7 @@ const MergeSort = () => {
         handleSort(parsedArr);
     }
 
-    return ( 
+    return(
         <div className="view">
             <h1>Merge Sort</h1>
             <div className="content">
@@ -63,7 +63,7 @@ const MergeSort = () => {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default MergeSort;

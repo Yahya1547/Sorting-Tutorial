@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './sort.scss';
 import Card from '../cards/card';
 import Tab from '../tabs/tab';
 import InputArray from '../forms/inputArray';
 import { CSSTransition } from 'react-transition-group';
+import {Helmet} from 'react-helmet';
 
 
 const BubbleSort = () => {
@@ -44,24 +45,26 @@ const BubbleSort = () => {
         var parsedArr = arr.map(num => parseInt(num, 10));
         handleSort(parsedArr);
     }
-    
+
     return ( 
-        <div className="view">
-            <h1>Bubble Sort</h1>
-            <div className="content">
-                <div className="content--inner">
-                    <Tab data={data}>
-                        <p>Kompleksitas algoritma Bubble Sort adalah O(n<sup>2</sup>)</p>
-                    </Tab>
-                    <InputArray onSubmit={handleSubmit}/>
-                    <CSSTransition
-                    in={isSorted}
-                    timeout={300}
-                    classNames="fade"
-                    unmountOnExit
-                    >
-                        <Card arr={arr} index={index} setIndex={setIndex}/>
-                    </CSSTransition>
+        <div>
+            <div className="view">
+                <h1>Bubble Sort</h1>
+                <div className="content">
+                    <div className="content--inner">
+                        <Tab data={data}>
+                            <p>Kompleksitas algoritma Bubble Sort adalah O(n<sup>2</sup>)</p>
+                        </Tab>
+                        <InputArray onSubmit={handleSubmit}/>
+                        <CSSTransition
+                        in={isSorted}
+                        timeout={300}
+                        classNames="fade"
+                        unmountOnExit
+                        >
+                            <Card arr={arr} index={index} setIndex={setIndex}/>
+                        </CSSTransition>
+                    </div>
                 </div>
             </div>
         </div>
