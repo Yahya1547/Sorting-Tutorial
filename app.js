@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const sorting = require('./sorting');
 
 var app = express();
-var port = process.env.PORT || 5000;
+var port = 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
